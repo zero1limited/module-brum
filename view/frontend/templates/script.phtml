@@ -3,7 +3,7 @@
 ?>
 <script>
 (function () {
-  window.addEventListener('load', function () {
+  window.addEventListener('private-content-loaded', function () {
     var serverTime = performance.timing.responseEnd - performance.timing.requestStart;
     var remainingLoadTime = performance.timing.loadEventEnd - performance.timing.responseEnd;
     window.dataLayer = window.dataLayer || [];
