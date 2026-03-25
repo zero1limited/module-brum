@@ -1,0 +1,18 @@
+<?php
+/** @var \Zero1\Brum\Block\Script $block */
+?>
+<script>
+(function () {
+  window.addEventListener('load', function () {
+    var serverTime = performance.timing.responseEnd - performance.timing.requestStart;
+    var remainingLoadTime = performance.timing.loadEventEnd - performance.timing.responseEnd;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'response_time',
+      server_response_time_ms: serverTime,
+      asset_load_time_ms: remainingLoadTime,
+      magento_page_type: '<?= $block->escapeJs($block->getPageType()) ?>'
+    });
+  });
+})();
+</script>
